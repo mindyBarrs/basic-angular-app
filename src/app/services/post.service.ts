@@ -8,5 +8,9 @@ export class PostService {
     getPosts(): Promise<Post[]> {
         return Promise.resolve(POSTS);
     }
+
+    addPost(post: any) {
+        POSTS.push(post);
+    }
 }
 

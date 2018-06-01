@@ -1,3 +1,5 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 img{
     width: 25%;
     height: auto;
@@ -9,4 +11,8 @@ h1{
 
 ul{
     list-style: none;
+}
+
+textarea{
+    resize: none;
 }
