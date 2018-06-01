@@ -15,7 +15,7 @@ export class AppComponent {
   body: string;
 
   constructor(private _postService: PostService) {
-    this._postService.getPosts().then(posts => {
+    this._postService.getPosts().subscribe(posts => {
       this.posts = posts;
     });
   }
@@ -26,7 +26,10 @@ export class AppComponent {
       body: this.body
     };
 
-    this._postService.addPost(newPost);
+    this._postService.addPost(newPost).subscribe(post => {
+      this.posts.push(post);
+      console.log('A new post has been added');
+    });
     return false;
   }
 }
